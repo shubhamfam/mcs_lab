@@ -1,5 +1,5 @@
 def reverse_words(sentence):
-    reverse_words = sentence.split(' ')
+    reverse_words = sentence.split()
     reverse_words.reverse()
     reverse_string = ""
     for word in reverse_words:
