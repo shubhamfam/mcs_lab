@@ -1,0 +1,11 @@
+SET B
+Strings
+1. Write a python program to print even length words in a string
+2. Write a python program to accept the strings which contains all vowels
+3. Write a python program to Count the Number of matching characters in a pair of string
+
+Functions
+1. Write a Python function that takes a list and returns a new list with unique elements of the 
+    first list. 
+2. Write a Python function that takes a number as a parameter and check the number is prime or not. 
+3. write a python function to check if a number is a perfect number or not
