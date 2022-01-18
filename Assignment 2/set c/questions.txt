@@ -1,0 +1,14 @@
+1. Write a Python program to append items from a specified list. 
+2. Write a python program Check if a Substring is Present in a Given String
+3. Write a python program Words Frequency in String Shorthands
+4. Write a Python function to calculate the factorial of a number (a non-negative integer). The function 
+accepts the number as an argument.
+
+5. Write a Python function to check whether a number is in a given range. 
+6. Write a Python function that accepts a string and calculate the number of upper case letters and lower 
+case letters. 
+7. Write a Python program to detect the number of local variables declared in a function.
+8. Write a python program to Remove all duplicates from a given string in Python
+9. Write a Python function that checks whether a passed string is palindrome or not. 
+10. Write a Python program that accepts a hyphen-separated sequence of words as input and prints the 
+words in a hyphen-separated sequence after sorting them alphabetically

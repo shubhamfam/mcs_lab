@@ -1,0 +1,103 @@
+Assignment 1 A : 
+Petshop Database: Exercise: We need to start out by inserting some data which we can work with. Paste the following into your terminal to create a petshop with some pets in it 
+use petshop 
+db.pets.insert({name: "Mikey", species: "Gerbil"}) 
+db.pets.insert({name: "Davey Bungooligan", species: "Piranha"}) 
+db.pets.insert({name: "Suzy B", species: "Cat"}) 
+db.pets.insert({name: "Mikey", species: "Hotdog"}) 
+db.pets.insert({name: "Terrence", species: "Sausagedog"}) 
+db.pets.insert({name: "Philomena Jones", species: "Cat"}) 
+
+
+1. Add another piranha, and a naked mole rat called Henry. 
+
+db.pets.insertMany([
+    {name: "Henry", species: "Piranha"},
+    {name: "Henry", species: "Mole Rat"}
+])
+
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("61e3ee6dd377f3573a57908a"),
+		ObjectId("61e3ee6dd377f3573a57908b")
+	]
+}
+
+2. Use find to list all the pets. Find the ID of Mikey the Gerbil.
+
+db.pets.find().pretty()
+
+{
+	"_id" : ObjectId("61e3ee61d377f3573a579084"),
+	"name" : "Mikey",
+	"species" : "Gerbil"
+}
+{
+	"_id" : ObjectId("61e3ee62d377f3573a579085"),
+	"name" : "Davey Bungooligan",
+	"species" : "Piranha"
+}
+{
+	"_id" : ObjectId("61e3ee62d377f3573a579086"),
+	"name" : "Suzy B",
+	"species" : "Cat"
+}
+{
+	"_id" : ObjectId("61e3ee62d377f3573a579087"),
+	"name" : "Mikey",
+	"species" : "Hotdog"
+}
+{
+	"_id" : ObjectId("61e3ee62d377f3573a579088"),
+	"name" : "Terrence",
+	"species" : "Sausagedog"
+}
+{
+	"_id" : ObjectId("61e3ee63d377f3573a579089"),
+	"name" : "Philomena Jones",
+	"species" : "Cat"
+}
+{
+	"_id" : ObjectId("61e3ee6dd377f3573a57908a"),
+	"name" : "Henry",
+	"species" : "Piranha"
+}
+{
+	"_id" : ObjectId("61e3ee6dd377f3573a57908b"),
+	"name" : "Henry",
+	"species" : "Mole Rat"
+}
+
+3. Use find to find Mikey by id.
+
+db.pets.find(ObjectId("61e3ee61d377f3573a579084"))
+
+{ "_id" : ObjectId("61e3ee61d377f3573a579084"), "name" : "Mikey", "species" : "Gerbil" }
+
+4. Use find to find all the gerbils.
+
+db.pets.find({"species": "Gerbil"})
+
+{ "_id" : ObjectId("61e3ee61d377f3573a579084"), "name" : "Mikey", "species" : "Gerbil" }
+
+5. Find all the creatures named Mikey. 
+
+db.pets.find({"name": "Mikey"})
+
+{ "_id" : ObjectId("61e3ee61d377f3573a579084"), "name" : "Mikey", "species" : "Gerbil" }
+{ "_id" : ObjectId("61e3ee62d377f3573a579087"), "name" : "Mikey", "species" : "Hotdog" }
+
+6. Find all the creatures named Mikey who are gerbils.
+ 
+db.pets.find({"name": "Mikey", "species": "Gerbil"})
+
+{ "_id" : ObjectId("61e3ee61d377f3573a579084"), "name" : "Mikey", "species" : "Gerbil" }
+
+7. Find all the creatures with the string "dog" in their species. 
+
+db.pets.find({"species": /dog/})
+
+{ "_id" : ObjectId("61e3ee62d377f3573a579087"), "name" : "Mikey", "species" : "Hotdog" }
+{ "_id" : ObjectId("61e3ee62d377f3573a579088"), "name" : "Terrence", "species" : "Sausagedog" }
+ 
