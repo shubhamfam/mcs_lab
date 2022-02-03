@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT mailorder  ( parts, customers, employees, zipcodes, orders, odetails ) >
+
+<!ELEMENT part (pno, pname, qoh, price, olevel) >
+<!ELEMENT customer (cno, cname, street, zip, phone)>
+<!ELEMENT employee (eno, ename, zip, hdate) >
+<!ELEMENT  zipcode (zip, city)>
+<!ELEMENT order (ono, cno, eno, received, shipped) >
+<!ELEMENT odetail (ono, pno+, qty) >
+
+<!ELEMENT parts ( part*) >
+<!ELEMENT customers (customer*) >
+<!ELEMENT employees (employee*) >
+<!ELEMENT zipcodes  (zipcode*) >
+<!ELEMENT orders (order*) >
+<!ELEMENT odetails (odetail*) >
+
+<!ELEMENT pno (#PCDATA ) >
+<!ELEMENT pname (#PCDATA ) >
+<!ELEMENT qoh (#PCDATA ) >
+<!ELEMENT price (#PCDATA ) >
+<!ELEMENT olevel (#PCDATA ) >
+
+<!ELEMENT cno (#PCDATA ) >
+<!ELEMENT cname (#PCDATA ) >
+<!ELEMENT street (#PCDATA ) >
+<!ELEMENT zip (#PCDATA ) >
+<!ELEMENT phone (#PCDATA ) >
+
+<!ELEMENT eno (#PCDATA ) >
+<!ELEMENT ename (#PCDATA ) >
+<!ELEMENT hdate (#PCDATA ) >
+
+<!ELEMENT city (#PCDATA ) >
+
+<!ELEMENT received (#PCDATA ) >
+<!ELEMENT shipped (#PCDATA ) >
+
+<!ELEMENT ono (#PCDATA ) >
+<!ELEMENT qty (#PCDATA ) >
+

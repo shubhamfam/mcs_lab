@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mailorder SYSTEM "/home/shubham/coding/mcs_lab/XML/4.mailorder/Mailorder.dtd">
+
+
+<mailorder>
+    <parts>
+        <part>
+            <pno>101</pno>
+            <pname>Star Wars - I</pname>
+            <qoh>200</qoh>
+            <price>53.00</price>
+            <olevel>20</olevel>
+        </part>
+        <part>
+            <pno>102</pno>
+            <pname>Star Wars - II</pname>
+            <qoh>320</qoh>
+            <price>55.99</price>
+            <olevel>20</olevel>
+        </part>
+        <part>
+            <pno>103</pno>
+            <pname>Fantastic Four</pname>
+            <qoh>260</qoh>
+            <price>19.00</price>
+            <olevel>10</olevel>
+        </part>
+        <part>
+            <pno>104</pno>
+            <pname>Doombots</pname>
+            <qoh>100</qoh>
+            <price>14.99</price>
+            <olevel>10</olevel>
+        </part>
+        <part>
+            <pno>105</pno>
+            <pname>Balder the Brave</pname>
+            <qoh>70</qoh>
+            <price>17.00</price>
+            <olevel>30</olevel>
+        </part>
+        <part>
+            <pno>106</pno>
+            <pname>Infinity Gems</pname>
+            <qoh>100</qoh>
+            <price>59.99</price>
+            <olevel>30</olevel>
+        </part>
+    </parts>
+    
+    <customers>
+        <customer>
+            <cno>11</cno>
+            <cname>Peter Parker</cname>
+            <street>123 Main St.</street>
+            <zip>789100</zip>
+            <phone>316-689-5555</phone>
+        </customer>
+        <customer>
+            <cno>12</cno>
+            <cname>Tony Stark</cname>
+            <street>Jump St.</street>
+            <zip>700100</zip>
+            <phone>300-0300-3000</phone>
+        </customer>
+        <customer>
+            <cno>13</cno>
+            <cname>Shubham Gaikwad</cname>
+            <street>Miami St.</street>
+            <zip>411041</zip>
+            <phone>9997799999</phone>
+        </customer>
+        <customer>
+            <cno>14</cno>
+            <cname>Harry Potter</cname>
+            <street>123 Main St.</street>
+            <zip>789100</zip>
+            <phone>316-689-7777</phone>
+        </customer>
+        <customer>
+            <cno>15</cno>
+            <cname>Tina Stark</cname>
+            <street>Jump St.</street>
+            <zip>700100</zip>
+            <phone>300-0300-3003</phone>
+        </customer>
+    </customers>
+
+    <employees>
+        <employee>
+            <eno>1001</eno>
+            <ename>John Smith</ename>
+            <zip>789100</zip>
+            <hdate>2021-01-11</hdate>
+        </employee>
+        <employee>
+            <eno>1002</eno>
+            <ename>Jane Doe</ename>
+            <zip>700100</zip>
+            <hdate>2021-02-09</hdate>
+        </employee>
+        <employee>
+            <eno>1003</eno>
+            <ename>Elon Bezos</ename>
+            <zip>411041</zip>
+            <hdate>2021-04-12</hdate>
+        </employee>
+    </employees>
+    
+    <zipcodes>
+        <zipcode>
+            <zip>411041</zip>
+            <city>Pune</city>
+        </zipcode>
+        <zipcode>
+            <zip>789100</zip>
+            <city>Wichita</city>
+        </zipcode>
+        <zipcode>
+            <zip>700100</zip>
+            <city>Los Angeles</city>
+        </zipcode>
+        <zipcode>
+            <zip>54444</zip>
+            <city>Columbia</city>
+        </zipcode>
+    </zipcodes>
+    
+    <orders>
+        <order>
+            <ono>01</ono>
+            <cno>11</cno>
+            <eno>1001</eno>
+            <received>2021-05-06</received>
+            <shipped>2021-05-08</shipped>
+        </order>
+      
+        <order>
+            <ono>03</ono>
+            <cno>12</cno>
+            <eno>1002</eno>
+            <received>2021-10-11</received>
+            <shipped>2021-10-14</shipped>
+        </order>
+        <order>
+            <ono>04</ono>
+            <cno>12</cno>
+            <eno>1002</eno>
+            <received>2021-11-11</received>
+            <shipped>2021-11-16</shipped>
+        </order>
+        <order>
+            <ono>05</ono>
+            <cno>13</cno>
+            <eno>1003</eno>
+            <received>2021-12-01</received>
+            <shipped>2021-12-02</shipped>
+        </order>
+        <order>
+            <ono>06</ono>
+            <cno>13</cno>
+            <eno>1001</eno>
+            <received>2021-12-28</received>
+            <shipped>2021-12-31</shipped>
+        </order>
+    </orders>
+
+    <odetails>
+        <odetail>
+            <ono>01</ono>
+            <pno>102</pno>
+            <qty>1</qty>
+        </odetail>
+        
+        <odetail>
+            <ono>03</ono>
+            <pno>103</pno>
+            <pno>104</pno>
+            <pno>105</pno>
+            <qty>2</qty>
+        </odetail>
+        <odetail>
+            <ono>04</ono>
+            <pno>105</pno>
+            <qty>4</qty>
+        </odetail>
+        <odetail>
+            <ono>05</ono>
+            <pno>103</pno>
+            <pno>104</pno>
+            <pno>105</pno>
+            <qty>1</qty>
+        </odetail>
+    </odetails>
+    
+</mailorder>

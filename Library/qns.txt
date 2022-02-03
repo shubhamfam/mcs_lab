@@ -1,0 +1,137 @@
+Numpy
+
+1.Write a NumPy program to create an array of 10 zeros,10 ones, 10 fives.
+
+2.Write a NumPy program to create a new array of given shape (5,6) and type, filled with zeros.
+
+3.Write a NumPy program to swap rows and columns of a given array in reverse order.
+
+4.Write a NumPy program to repeat all the elements three times of a given array of string
+
+Original Array: ['CS' 'Maths' 'English' 'Hindi']
+
+New array: ['CSCSCS' 'MathsMathsMaths ' ' EnglishEnglishEnglish ' 'HindiHindiHindi ']
+
+5.Write a NumPy program to convert the values of Centigrade degrees into Fahrenheit degrees. Centigrade values are stored into a NumPy array.
+
+Pandas
+
+1.Write a Pandas program to add, subtract, multiple and divide two Pandas Series.
+
+2.Write a Pandas program to select the 'name' and 'score' columns from the following DataFrame.
+
+exam_data = {'name': ['Damon', 'Stefan', 'Katherine', 'Caroline', 'Emily', 'Michael', 'Matt'] 'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5], 'attempts': [1, 3, 2, 3, 2, 3, 1], 'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes']}
+
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+Expected Output: Select specific columns: name score a Anastasia 12.5 b Dima 9.0 c Katherine 16.5 d Carloine np.nan
+
+e Emily 9
+
+f Michael 20
+
+g Matt 14.5
+
+3.Write a Pandas program to select the rows the score is between 15 and 20 (consider the above dataframe).
+
+Matplot
+
+month_number facecream facewash toothpaste bathingsoap shampoo moisturizer total_units total_profit
+
+1 2500 1500 5200 9200 1200 1500 21100 211000
+
+2 2630 1200 5100 6100 2100 1200 18330 183300
+
+3 2140 1340 4550 9550 3550 1340 22470 224700
+
+4 3400 Numpy
+
+1.Write a NumPy program to create an array of 10 zeros,10 ones, 10 fives.
+
+2.Write a NumPy program to create a new array of given shape (5,6) and type, filled with zeros.
+
+3.Write a NumPy program to swap rows and columns of a given array in reverse order.
+
+4.Write a NumPy program to repeat all the elements three times of a given array of string
+
+Original Array: ['CS' 'Maths' 'English' 'Hindi']
+
+New array: ['CSCSCS' 'MathsMathsMaths ' ' EnglishEnglishEnglish ' 'HindiHindiHindi ']
+
+5.Write a NumPy program to convert the values of Centigrade degrees into Fahrenheit degrees. Centigrade values are stored into a NumPy array.
+
+Pandas
+
+1.Write a Pandas program to add, subtract, multiple and divide two Pandas Series.
+
+2.Write a Pandas program to select the 'name' and 'score' columns from the following DataFrame.
+
+exam_data = {'name': ['Damon', 'Stefan', 'Katherine', 'Caroline', 'Emily', 'Michael', 'Matt'] 'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5], 'attempts': [1, 3, 2, 3, 2, 3, 1], 'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes']}
+
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+Expected Output: Select specific columns: name score a Anastasia 12.5 b Dima 9.0 c Katherine 16.5 d Carloine np.nan
+
+e Emily 9
+
+f Michael 20
+
+g Matt 14.5
+
+3.Write a Pandas program to select the rows the score is between 15 and 20 (consider the above dataframe).
+
+Matplot
+
+month_number facecream facewash toothpaste bathingsoap shampoo moisturizer total_units total_profit
+
+1 2500 1500 5200 9200 1200 1500 21100 211000
+
+2 2630 1200 5100 6100 2100 1200 18330 183300
+
+3 2140 1340 4550 9550 3550 1340 22470 224700
+
+4 3400 1130 5870 8870 1870 1130 22270 222700
+
+5 3600 1740 4560 7760 1560 1740 20960 209600
+
+6 2760 1555 4890 7490 1890 1555 20140 201400
+
+7 2980 1120 4780 8980 1780 1120 29550 295500
+
+8 3700 1400 5860 9960 2860 1400 36140 361400
+
+9 3540 1780 6100 8100 2100 1780 23400 234000
+
+10 1990 1890 8300 10300 2300 1890 26670 266700
+
+11 2340 2100 7300 13300 2400 2100 41280 412800
+
+12 2900 1760 7400 14400 1800 1760 30020 300200
+
+1.Read face cream and facewash product sales data and show it using the bar chart
+
+2.Calculate total sale data for last year for each product and show it using a Pie chart
+
+3.Read all product sales data and show it using the stack plot1130 5870 8870 1870 1130 22270 222700
+
+5 3600 1740 4560 7760 1560 1740 20960 209600
+
+6 2760 1555 4890 7490 1890 1555 20140 201400
+
+7 2980 1120 4780 8980 1780 1120 29550 295500
+
+8 3700 1400 5860 9960 2860 1400 36140 361400
+
+9 3540 1780 6100 8100 2100 1780 23400 234000
+
+10 1990 1890 8300 10300 2300 1890 26670 266700
+
+11 2340 2100 7300 13300 2400 2100 41280 412800
+
+12 2900 1760 7400 14400 1800 1760 30020 300200
+
+1.Read face cream and facewash product sales data and show it using the bar chart
+
+2.Calculate total sale data for last year for each product and show it using a Pie chart
+
+3.Read all product sales data and show it using the stack plot

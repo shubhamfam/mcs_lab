@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT gradebook  ( grade )>
+<!ELEMENT fname  ( #PCDATA )>
+<!ELEMENT courses  ( course+ )>
+<!ELEMENT A  ( #PCDATA )>
+<!ELEMENT B  ( #PCDATA )>
+<!ELEMENT C  ( #PCDATA )>
+<!ELEMENT cno  ( #PCDATA )>
+<!ELEMENT student  ( sid , fname , lname , minit )>
+<!ELEMENT catalog  ( cno , ctitle )>
+<!ELEMENT enrolls  ( enroll+ )>
+<!ELEMENT students  ( student+ )>
+<!ELEMENT minit  ( #PCDATA )>
+
+<!ELEMENT sid  ( #PCDATA )>
+<!ELEMENT secno  ( #PCDATA )>
+<!ELEMENT lname  ( #PCDATA )>
+<!ELEMENT catalogs  ( catalog+ )>
+<!ELEMENT ctitle  ( #PCDATA )>
+<!ELEMENT grade  ( catalogs , students , courses , enrolls )>
+<!ELEMENT course  ( term , secno , cno , A , B , C )>
+<!ELEMENT term  ( #PCDATA )>
+<!ELEMENT enroll  ( sid , term , secno )>

@@ -1,0 +1,25 @@
+SETA
+
+1. Write a Python program to find sequences of lowercase letters joined with a underscore
+
+2. Write a python program to Check if String Contain Only Defined Characters using Regex
+
+SET B
+
+1. Write a Python program to match a string that contains only upper and lowercase letters, numbers, and underscores.
+
+2. Write a python Program to Remove duplicate words from Sentence
+
+3. Write a python to| Remove all characters except letters and numbers PROGRAMS
+
+SET C
+
+1. Write a python program to Count Uppercase, Lowercase, special character and numeric values using Regex
+
+2. Write a python program to find the most occurring number in a string using Regex
+
+3. Write a python Regex to extract maximum numeric value from a string
+
+4. Write a python program to put spaces between words starting with capital letters using Regex
+
+5. Write a python to Check whether a string starts and ends with the same character or not

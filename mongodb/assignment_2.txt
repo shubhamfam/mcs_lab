@@ -1,0 +1,523 @@
+use('Movie')
+
+db.createCollection('Film')
+db.createCollection('Actor')
+
+db.Film.insertMany([
+    {'_id': 101, 'title': 'Endgame', 'year': 2019, 'genre': ['Action', 'Adventure', 'Drama'], 'actors': ['Robert Downey Jr.', 'Chris Evans', 'Chris Hemsworth', 'Scarlett Johansson'], 'director': 'Anthony Russo' , 'releases': [{'country':'Australia', 'date': ISODate('2019-04-24')}, {'country': 'United Kingdom', 'date': ISODate('2019-04-25')}, {'country': 'India', 'date': ISODate('2019-04-26')}], 'rating': 'PG-13'},
+    {'_id': 102, 'title': 'Ra.One', 'year': 2011, 'genre': ['Action', 'Sci-fi'], 'actors': ['Shahrukh Khan', 'Kareena Kapoor', 'Priyanka Chopra'], 'director': 'Anubhav Sinha', 'releases': [{'country': 'Dubai', 'date': ISODate('2011-10-24')}, {'country':'India','date': ISODate('2011-10-26')}], 'rating': 'U'},
+    {'_id': 103, 'title': 'Tanhaji', 'year': 2020, 'genre': ['Action', 'Historical'], 'actors': ['Ajay Devgn', 'Saif Ali Khan','Kajol'], 'director': 'Om Raut', 'releases': [{'country': 'India','date': ISODate('2020-01-10')}]},
+    {'_id': 104, 'title': 'Allu Aaliya Gavala', 'year': 2022, 'genre': 'Comedy', 'actors': ['Allu Arjun', 'Alia Bhatt'], 'director': 'Arjun Bhatt', 'releases': {'country':'India', 'date': ISODate('2022-01-07')}},
+    {'_id': 105, 'title': 'RRR', 'year': 2022, 'genre': ['Adventure','Thriller'], 'actors': ['Ram Charan', 'Alia Bhatt','Ajay Devgn'], 'director': 'S S Rajamouli'},
+    {'_id': 106, 'title': 'Icon', 'year': '', 'genre': ['Drama', 'Romance'], 'actors': ['Allu Arjun', 'Alia Bhatt'], 'director': 'Venu Sriram'},
+    {'_id': 107, 'title': 'Kuch Kuch Hota Hai', 'year': 1998, 'genre': ['Romance', 'Musical'], 'actors': ['Shahrukh Khan', 'Kajol', 'Salman Khan'], 'director': 'Karan Johar', 'releases': {'country':'India', 'date': ISODate('1998-10-16')}, 'rating': 'U'},
+    {'_id': 108, 'title': 'Dil Se..', 'year': 1998, 'genre': ['Romance', 'Musical'], 'actors': ['Shahrukh Khan', 'Manisha Koirala'], 'director': 'Mani Ratnam', 'releases': {'country':'India', 'date': ISODate('1998-08-21')}, 'rating': 'A'},
+    {'_id': 109, 'title': 'Soldier', 'year': 1998, 'genre': 'Action', 'actors': ['Bobby Deol', 'Preity Zinta'], 'director': 'Abbas Mastan', 'releases': {'country':'India', 'date': ISODate('1998-10-12')}, 'rating': 'U/A'},
+    {'_id': 110, 'title': 'Captain America: Civil War', 'year': 2016, 'genre': ['Adventure','Thriller','Action'], 'actors': ['Chris Evans', 'Robert Downey Jr'], 'director': 'Anthony Russo', 'releases': [{'country': 'India', 'date': ISODate('2016-05-06')}, {'country': 'USA', 'date': ISODate('2016-04-27')}], 'rating': 'U/A'},
+])
+
+db.Actor.insertMany([
+    {'_id': 11, 'first_name': 'Salman', 'last_name': 'Khan', 'address': {'street': 'Bandra West', 'city': 'Mumbai', 'state': 'Maharashtra', 'country': 'Spain', 'pin-code': '400050'}, 'contact': {'email': 'thumbsup@mail.com', 'phone': '7375375237'}, 'age':56 },
+    {'_id': 12, 'first_name': 'Chris', 'last_name': 'Evans', 'address': {'street': 'Beverly Hills', 'city': 'Los Angeles', 'state': 'California', 'country': 'USA', 'pin-code': '90001'}, 'contact': {'email': 'captainamerica@avengers.com', 'phone': '3000123456'}, 'age': 40},
+    {'_id': 13, 'first_name': 'Chris', 'last_name': 'Hemsworth', 'address': {'street': 'Beverly Hills', 'city': 'Los Angeles', 'state': 'California', 'country': 'USA', 'pin-code': '90001'}, 'contact': {'email': 'thor@avengers.com', 'phone': '3000123457'}, 'age': 38},
+    {'_id': 14, 'first_name': 'Shahrukh', 'last_name': 'Khan', 'address': {'street': 'Bandra West', 'city': 'Mumbai', 'state': 'Maharashtra', 'country': 'India', 'pin-code': '400050'}, 'contact': {'email': 'iamkhan@mail.com', 'phone': '8888832525'}, 'age': 56},
+    {'_id': 15, 'first_name': 'Allu', 'last_name': 'Arjun', 'address': {'country': 'Spain'}, 'contact': {'email': 'dangerouskhiladi@tollywood.com', 'phone': '777777786'}, 'age': 39},
+])
+
+
+1.Add a value to the rating of the film whose title starts with ‘T’. 
+
+db.Film.updateOne({'title': /^T/}, {$set: {'rating': 'U/A'}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+2. Add an actor named "Dhanush" in the ‘Actor’ collection.
+Also add the details of the film in ‘Film’ collection in which this actor has acted in. 
+
+db.Actor.insertOne({'_id':16, 'first_name':'Dhanush', 'age': 38})
+
+{ acknowledged: true, insertedId: 16 }
+
+db.Film.insertOne({'_id':111, 'title': 'Raanjhanaa', 'year':2013, 'genre': 'Drama', 'actors': ['Dhanush', 'Sonam Kapoor'], 'director': 'Anand L Rai', 'releases': {'country': 'India', 'date': ISODate('2013-06-21')}})
+
+{ acknowledged: true, insertedId: 111 }
+
+
+3.  Delete the film "Endgame"
+
+db.Film.deleteOne({'title': 'Endgame'})
+
+{ acknowledged: true, deletedCount: 1 }
+
+
+4.  Delete an actor named "Salman Khan "
+
+db.Actor.deleteOne({'first_name': 'Salman', 'last_name': 'Khan'})
+
+{ acknowledged: true, deletedCount: 1 }
+
+
+5.  Delete all actors from an ‘Actor’ collection who have age greater than  45 
+
+db.Actor.deleteMany({'age': {'$gt': 45}})
+
+{ acknowledged: true, deletedCount: 1 }
+
+
+6. Update the actor’s address where Actor Id is “13”.
+
+db.Actor.updateOne({'_id': 13}, {$set: {'address': {
+    'street': 'Malibu Colony',
+    'city': 'Los Angeles', 'state': 'California', 'country': 'USA', 'pin-code': '90001'
+}}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+7.  Update the genre of the film directed by “ Om Raut”.
+
+db.Film.updateOne({'director': 'Om Raut'}, {$set: {'genre': 'Historical'}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+(MongoDB Aggregate framework based queries) 
+ 
+1. Find the titles of all the films starting with the letter ‘R’ released during the year 2009 and 2011. 
+
+db.Film.aggregate([
+    {
+    $match: {
+        'title': /^R/,
+        'year': {
+            $gte: 2009,  $lte: 2011
+        },
+    }},
+    {
+    $project: {
+        '_id': 0,
+      'title': 1
+    }
+    }
+])
+
+//output
+[ { title: 'Ra.One' } ]
+
+
+2. Find the list of films acted by an actor "Chris Evans". 
+
+db.Film.find({'actors': 'Chris Evans'})
+
+//output
+[
+  {
+    _id: 110,
+    title: 'Captain America: Civil War',
+    year: 2016,
+    genre: [ 'Adventure', 'Thriller', 'Action' ],
+    actors: [ 'Chris Evans', 'Robert Downey Jr' ],
+    director: 'Anthony Russo',
+    releases: [
+      { country: 'India', date: ISODate("2016-05-06T00:00:00.000Z") },
+      { country: 'USA', date: ISODate("2016-04-27T00:00:00.000Z") }
+    ],
+    rating: 'U/A'
+  }
+]
+
+
+3. Find all the films released in 90s 
+
+db.Film.find({'year': {$gte: 1990, $lte: 1999}})
+
+//output
+[
+  {
+    _id: 107,
+    title: 'Kuch Kuch Hota Hai',
+    year: 1998,
+    genre: [ 'Romance', 'Musical' ],
+    actors: [ 'Shahrukh Khan', 'Kajol', 'Salman Khan' ],
+    director: 'Karan Johar',
+    releases: { country: 'India', date: ISODate("1998-10-16T00:00:00.000Z") },
+    rating: 'U'
+  },
+  {
+    _id: 108,
+    title: 'Dil Se..',
+    year: 1998,
+    genre: [ 'Romance', 'Musical' ],
+    actors: [ 'Shahrukh Khan', 'Manisha Koirala' ],
+    director: 'Mani Ratnam',
+    releases: { country: 'India', date: ISODate("1998-08-21T00:00:00.000Z") },
+    rating: 'A'
+  },
+  {
+    _id: 109,
+    title: 'Soldier',
+    year: 1998,
+    genre: 'Action',
+    actors: [ 'Bobby Deol', 'Preity Zinta' ],
+    director: 'Abbas Mastan',
+    releases: { country: 'India', date: ISODate("1998-10-12T00:00:00.000Z") },
+    rating: 'U/A'
+  }
+]
+
+
+4. Find all films belonging to “Adventure” and “Thriller” genre. 
+
+db.Film.find({'genre': ['Adventure', 'Thriller']})
+
+//output
+[
+  {
+    _id: 105,
+    title: 'RRR',
+    year: 2022,
+    genre: [ 'Adventure', 'Thriller' ],
+    actors: [ 'Ram Charan', 'Alia Bhatt', 'Ajay Devgn' ],
+    director: 'S S Rajamouli'
+  }
+]
+
+
+5. Find all the films having ‘A’ rating. 
+
+db.Film.find({'rating': 'A'})
+
+//output
+[
+  {
+    _id: 108,
+    title: 'Dil Se..',
+    year: 1998,
+    genre: [ 'Romance', 'Musical' ],
+    actors: [ 'Shahrukh Khan', 'Manisha Koirala' ],
+    director: 'Mani Ratnam',
+    releases: { country: 'India', date: ISODate("1998-08-21T00:00:00.000Z") },
+    rating: 'A'
+  }
+]
+
+
+6. Arrange the film names in ascending order and release year should be in descending order. 
+
+db.Film.aggregate([
+    {$sort:{
+        'title': 1,
+        'year': -1
+    }}
+])
+
+//output
+[
+  {
+    _id: 104,
+    title: 'Allu Aaliya Gavala',
+    year: 2022,
+    genre: 'Comedy',
+    actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+    director: 'Arjun Bhatt',
+    releases: { country: 'India', date: ISODate("2022-01-07T00:00:00.000Z") }
+  },
+  {
+    _id: 110,
+    title: 'Captain America: Civil War',
+    year: 2016,
+    genre: [ 'Adventure', 'Thriller', 'Action' ],
+    actors: [ 'Chris Evans', 'Robert Downey Jr' ],
+    director: 'Anthony Russo',
+    releases: [
+      { country: 'India', date: ISODate("2016-05-06T00:00:00.000Z") },
+      { country: 'USA', date: ISODate("2016-04-27T00:00:00.000Z") }
+    ],
+    rating: 'U/A'
+  },
+  {
+    _id: 108,
+    title: 'Dil Se..',
+    year: 1998,
+    genre: [ 'Romance', 'Musical' ],
+    actors: [ 'Shahrukh Khan', 'Manisha Koirala' ],
+    director: 'Mani Ratnam',
+    releases: { country: 'India', date: ISODate("1998-08-21T00:00:00.000Z") },
+    rating: 'A'
+  },
+  {
+    _id: 106,
+    title: 'Icon',
+    year: '',
+    genre: [ 'Drama', 'Romance' ],
+    actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+    director: 'Venu Sriram'
+  },
+  {
+    _id: 107,
+    title: 'Kuch Kuch Hota Hai',
+    year: 1998,
+    genre: [ 'Romance', 'Musical' ],
+    actors: [ 'Shahrukh Khan', 'Kajol', 'Salman Khan' ],
+    director: 'Karan Johar',
+    releases: { country: 'India', date: ISODate("1998-10-16T00:00:00.000Z") },
+    rating: 'U'
+  },
+  {
+    _id: 105,
+    title: 'RRR',
+    year: 2022,
+    genre: [ 'Adventure', 'Thriller' ],
+    actors: [ 'Ram Charan', 'Alia Bhatt', 'Ajay Devgn' ],
+    director: 'S S Rajamouli'
+  },
+  {
+    _id: 102,
+    title: 'Ra.One',
+    year: 2011,
+    genre: [ 'Action', 'Sci-fi' ],
+    actors: [ 'Shahrukh Khan', 'Kareena Kapoor', 'Priyanka Chopra' ],
+    director: 'Anubhav Sinha',
+    releases: [
+      { country: 'Dubai', date: ISODate("2011-10-24T00:00:00.000Z") },
+      { country: 'India', date: ISODate("2011-10-26T00:00:00.000Z") }
+    ],
+    rating: 'U'
+  },
+  {
+    _id: 111,
+    title: 'Raanjhanaa',
+    year: 2013,
+    genre: 'Drama',
+    actors: [ 'Dhanush', 'Sonam Kapoor' ],
+    director: 'Anand L Rai',
+    releases: { country: 'India', date: ISODate("2013-06-21T00:00:00.000Z") }
+  },
+  {
+    _id: 109,
+    title: 'Soldier',
+    year: 1998,
+    genre: 'Action',
+    actors: [ 'Bobby Deol', 'Preity Zinta' ],
+    director: 'Abbas Mastan',
+    releases: { country: 'India', date: ISODate("1998-10-12T00:00:00.000Z") },
+    rating: 'U/A'
+  },
+  {
+    _id: 103,
+    title: 'Tanhaji',
+    year: 2020,
+    genre: 'Historical',
+    actors: [ 'Ajay Devgn', 'Saif Ali Khan', 'Kajol' ],
+    director: 'Om Raut',
+    releases: [ { country: 'India', date: ISODate("2020-01-10T00:00:00.000Z") } ],
+    rating: 'U/A'
+  }
+]
+
+
+7. Sort the actors in ascending order according to their age. 
+
+db.Actor.aggregate([
+    {$sort:{
+        'age': 1
+    }}
+])
+
+//output
+[
+  {
+    _id: 13,
+    first_name: 'Chris',
+    last_name: 'Hemsworth',
+    address: {
+      street: 'Malibu Colony',
+      city: 'Los Angeles',
+      state: 'California',
+      country: 'USA',
+      'pin-code': '90001'
+    },
+    contact: { email: 'thor@avengers.com', phone: '3000123457' },
+    age: 38
+  },
+  { _id: 16, first_name: 'Dhanush', age: 38 },
+  {
+    _id: 15,
+    first_name: 'Allu',
+    last_name: 'Arjun',
+    address: { country: 'Spain' },
+    contact: { email: 'dangerouskhiladi@tollywood.com', phone: '777777786' },
+    age: 39
+  },
+  {
+    _id: 12,
+    first_name: 'Chris',
+    last_name: 'Evans',
+    address: {
+      street: 'Beverly Hills',
+      city: 'Los Angeles',
+      state: 'California',
+      country: 'USA',
+      'pin-code': '90001'
+    },
+    contact: { email: 'captainamerica@avengers.com', phone: '3000123456' },
+    age: 40
+  }
+]
+
+
+8. Find movies that are comedies or dramas and are released after 2005. 
+
+db.Film.find({$or:[{'genre': 'Drama'},{'genre':'Comedy'}], 'year': {$gt: 2005}})
+
+//output
+[
+  {
+    _id: 104,
+    title: 'Allu Aaliya Gavala',
+    year: 2022,
+    genre: 'Comedy',
+    actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+    director: 'Arjun Bhatt',
+    releases: { country: 'India', date: ISODate("2022-01-07T00:00:00.000Z") }
+  },
+  {
+    _id: 111,
+    title: 'Raanjhanaa',
+    year: 2013,
+    genre: 'Drama',
+    actors: [ 'Dhanush', 'Sonam Kapoor' ],
+    director: 'Anand L Rai',
+    releases: { country: 'India', date: ISODate("2013-06-21T00:00:00.000Z") }
+  }
+]
+
+
+9. Show the latest 2 films acted by an actor “Chris Hemsworth”. 
+
+db.Film.find({'actors': 'Shahrukh Khan'}).sort({'year':-1}).limit(2)
+
+//output
+[
+  {
+    _id: 102,
+    title: 'Ra.One',
+    year: 2011,
+    genre: [ 'Action', 'Sci-fi' ],
+    actors: [ 'Shahrukh Khan', 'Kareena Kapoor', 'Priyanka Chopra' ],
+    director: 'Anubhav Sinha',
+    releases: [
+      { country: 'Dubai', date: ISODate("2011-10-24T00:00:00.000Z") },
+      { country: 'India', date: ISODate("2011-10-26T00:00:00.000Z") }
+    ],
+    rating: 'U'
+  },
+  {
+    _id: 107,
+    title: 'Kuch Kuch Hota Hai',
+    year: 1998,
+    genre: [ 'Romance', 'Musical' ],
+    actors: [ 'Shahrukh Khan', 'Kajol', 'Salman Khan' ],
+    director: 'Karan Johar',
+    releases: { country: 'India', date: ISODate("1998-10-16T00:00:00.000Z") },
+    rating: 'U'
+  }
+]
+
+10. List the titles of films acted by actors “ ” and “ ”.  
+
+db.Film.find({'actors': ['Allu Arjun', 'Alia Bhatt']})
+
+//output
+[
+  {
+    _id: 104,
+    title: 'Allu Aaliya Gavala',
+    year: 2022,
+    genre: 'Comedy',
+    actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+    director: 'Arjun Bhatt',
+    releases: { country: 'India', date: ISODate("2022-01-07T00:00:00.000Z") }
+  },
+  {
+    _id: 106,
+    title: 'Icon',
+    year: '',
+    genre: [ 'Drama', 'Romance' ],
+    actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+    director: 'Venu Sriram'
+  }
+]
+
+
+11.Retrieve films with an actor living in Spain. 
+
+db.Actor.aggregate([
+      {$addFields: {
+          newField: {$concat : [ "$first_name", " ", "$last_name" ]}
+        }},
+    {
+        $lookup: {
+          from: 'Film',
+          localField: 'newField',
+          foreignField: 'actors',
+          as: 'movies'
+        }
+    },
+    {
+        $match: {
+          'address.country': 'Spain'
+        }
+    },
+    {
+        $project: {
+            '_id': 0,
+            'movies': 1
+        }
+    }
+])
+
+//output
+[
+  {
+    movies: [
+      {
+        _id: 104,
+        title: 'Allu Aaliya Gavala',
+        year: 2022,
+        genre: 'Comedy',
+        actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+        director: 'Arjun Bhatt',
+        releases: { country: 'India', date: ISODate("2022-01-07T00:00:00.000Z") }
+      },
+      {
+        _id: 106,
+        title: 'Icon',
+        year: '',
+        genre: [ 'Drama', 'Romance' ],
+        actors: [ 'Allu Arjun', 'Alia Bhatt' ],
+        director: 'Venu Sriram'
+      }
+    ]
+  }
+]
+

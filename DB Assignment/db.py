@@ -16,7 +16,8 @@ def create_table(conn, table, columns=()):
     try:
         cursor = conn.cursor()
         cursor.execute(f"DROP TABLE IF EXISTS {table}")
-        sql = ("create table " + table + str(columns)).replace("'", "")
+        sql = (f"create table {table} {str(columns)}").replace("'", "")
+        print(sql)
         cursor.execute(sql)
         print(f"{table} table created successfully.")
         conn.commit()
@@ -28,7 +29,8 @@ def insertOne(conn, table, values=(), columns=()):
     try:
         cursor = conn.cursor()
         columns = str(columns) if columns else ""
-        sql = "insert into " + table + columns + " values " + str(values)
+        sql = f"insert into {table} {columns} values {str(values)}" 
+        print(sql)
         cursor.execute(sql)
         print(f"Data inserted successfully.")
         conn.commit()
@@ -41,7 +43,8 @@ def insertMany(conn, table, columns=(), values=()):
         cursor = conn.cursor()
         columns = str(columns) if columns else ""
         holders = ("?," * len(values[0]))[:-1]
-        sql = "insert into " + table + columns + " values(" + holders + ")"
+        sql = f"insert into {table} {columns} values ({holders})"
+        print(sql)
         cursor.executemany(sql, values)
         print(f"Data inserted successfully.")
         conn.commit()
@@ -64,11 +67,22 @@ def selectAll(conn, table, condition=""):
 
 def update(conn, table, column, value, condition=""):
     value = f"\'{value}\'" if isinstance(value, str) else str(value)
-
     sql = f"update {table} set {column} = {value}" + (" where "+condition if condition else "") 
     print(sql)
+    try:
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        conn.commit()
+    except Error:
+        print(Error)
 
+def delete(conn, table, condition=""):
+    sql = f"delete from {table}" + (" where "+condition if condition else "") 
+    print(sql)
+    try:
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        conn.commit()
+    except Error:
+        print(Error)
 
-conn = connect("assignment.db")
-
-update(conn, "assi", "status", False)

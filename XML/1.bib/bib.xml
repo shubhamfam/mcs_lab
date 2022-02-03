@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bib SYSTEM "/home/shubham/coding/mcs_lab/XML/1.bib/Bibliography.dtd">
+<bib>
+    <book year="1994">
+        <title>TCP/IP Illustrated</title>
+        <author><last>Stevens</last><first>W.</first></author>
+        <publisher>Addison-Wesley</publisher>
+        <price>65.95</price>
+    </book>
+ 
+    <book year="1992">
+        <title>Advanced Programming in the Unix environment</title>
+        <author><last>Stevens</last><first>W.</first></author>
+        <publisher>Addison-Wesley</publisher>
+        <price>65.95</price>
+    </book>
+ 
+    <book year="2000">
+        <title>Data on the Web</title>
+        <author><last>Abiteboul</last><first>Serge</first></author>
+        <author><last>Buneman</last><first>Peter</first></author>
+        <author><last>Suciu</last><first>Dan</first></author>
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>39.95</price>
+    </book>
+ 
+    <book year="1999">
+        <title>The Economics of Technology and Content for Digital TV</title>
+        <editor>
+               <last>Gerbarg</last><first>Darcy</first>
+                <affiliation>CITI</affiliation>
+        </editor>
+        <publisher>Kluwer Academic Publishers</publisher>
+        <price>129.95</price>
+    </book>
+    <book year= "2005">
+        <title>Learn Java in 24 Hours</title>
+        <author><last>Ben</last><first>Robert</first></author>
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>30.00</price>
+    </book>
+    
+    <book year="2011">
+        <title>Learn .Net in 24 hours</title>
+        <author><last>Peter</last><first>Moriss</first></author>
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>70.50</price>
+    </book>
+    
+    <book year="2013">
+        <title>Learn XQuery in 24 hours</title>
+        <author><last>Robert</last><first>Peter</first></author>
+        <author><last>currie</last><first>merry</first></author> 
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>50.00</price>
+    </book>
+    
+    <book year="2010">
+        <title>Learn XPath in 24 hours</title>
+        <author><last>Jay</last><first>Ban</first></author>
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>16.50</price>
+    </book>
+    
+    <book year="1984">
+        <title>Executing Temporal Logic Programs</title>
+        <author><last>Moszkowski</last><first>Ben</first></author>
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>20.00</price>
+    </book>
+ 
+    <book year="2014">
+        <title>Database Management Systems</title>
+        <author><last>Ramakrishnan</last><first>Raghu</first></author>
+        <author><last>Gehrke</last><first>Johannes</first></author>
+        <publisher>Mc Graw Hill</publisher>
+        <price>12.00</price>
+    </book>
+
+    <book year="2012">
+        <title>Constraints and Databases</title>
+        <author><last>Ramakrishnan</last><first>Raghu</first></author>
+        <author><last>Stuckey</last><first>Peter</first></author>
+        <publisher>Springer Science</publisher>
+        <price>135.00</price>
+    </book>
+</bib>
