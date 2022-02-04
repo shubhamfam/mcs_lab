@@ -2,4 +2,4 @@
 
 for $x in doc("bib.xml")/bib/book
 where $x/price > 40
-return <books>{$x}</books>
+return <li>{$x}</li>

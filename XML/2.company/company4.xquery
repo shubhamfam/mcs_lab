@@ -5,6 +5,6 @@ let $managers := doc("company.xml")/companyDB/employees/employee[@manages]
 
 for $manager in $managers
 where count($manager/dependents/dependent) >= 1
-return <managers>
+return <li>
         {concat($manager/fname, " ", $manager/lname)}
-       </managers>
+       </li>

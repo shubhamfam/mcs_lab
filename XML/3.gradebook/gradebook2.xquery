@@ -3,7 +3,7 @@ enrolled in CSc226 as well as CSc227.:)
 
 let $courses := doc("Gradebook.xml")/gradebook/grade/courses/course[cno = "CSc226" or cno="CSc227"]
 
-let $enrolls := doc("Gradebook.xml")/gradebook/grade/enrolls/enroll[secno=$courses/secno]
-
-
-return <students>{distinct-values($enrolls/sid)}</students>
+for $student in doc("Gradebook.xml")/gradebook/grade/students/student
+let $enrolled_in := doc("Gradebook.xml")/gradebook/grade/enrolls/enroll[sid=$student/sid and secno = $courses/secno]
+where count($courses) = $count($enrolled_in)
+return <students>{$student/sid}</students>
